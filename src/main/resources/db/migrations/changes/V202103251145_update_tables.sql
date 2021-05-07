@@ -1,0 +1,10 @@
+alter table request_limit alter column prc type double precision using prc::double precision;
+alter table leads alter column form_name type varchar(1024) using form_name::varchar(1024);
+alter table leads alter column design type varchar(1024) using design::varchar(1024);
+alter table leads alter column product type varchar(1024) using product::varchar(1024);
+alter table leads alter column lead_generator type varchar(1024) using lead_generator::varchar(1024);
+alter table leads alter column utm_source type varchar(1024) using utm_source::varchar(1024);
+alter table leads alter column utm_medium type varchar(1024) using utm_medium::varchar(1024);
+alter table leads alter column utm_campaign type varchar(1024) using utm_campaign::varchar(1024);
+alter table leads alter column browser type varchar(1024) using browser::varchar(1024);
+alter table request_call alter column category type varchar(5) using category::varchar(5);

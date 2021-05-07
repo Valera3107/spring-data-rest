@@ -1,0 +1,147 @@
+databaseChangeLog:
+  - changeSet:
+      validCheckSum: ANY
+      id: 202103041505_initial_database_structure
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103151114_create_table_dictionary.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103151117_create_table_dictionary_value.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041431_create_table_address.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041519_create_table_request.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202116031527_create_table_request_service.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103151119_create_table_request_call.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103151121_create_table_request_sms.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041520_create_table_request_applicant.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041521_create_table_request_applicant_passport.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202104031522_create_table_request_applicant_work.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041523_create_table_delivery.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041525_create_table_esia_applicant.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041527_create_table_esia_contact.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041529_create_table_esia_document.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041530_create_table_esia_address.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041531_create_table_request_pred_limit.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041556_create_table_request_limit.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103041557_create_table_document.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103101314_create_table_bki.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103101316_create_table_leads.sql
+  - changeSet:
+      validCheckSum: ANY
+      id: 202103251310_update_table_fields_and_fill_dicitionary
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103251145_update_tables.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103251254_fill_table_dictionary.sql
+  - changeSet:
+      validCheckSum: ANY
+      id: 202103251346_fill_dicitionary_value
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V20210325111346_fill_table_dictionary_value.sql
+  - changeSet:
+      validCheckSum: ANY
+      id: V202103301535_update_tables_according_to_new_requirements
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103301534_update_tables_according_to_new_requirements.sql
+  - changeSet:
+      validCheckSum: ANY
+      id: V202103301555_added_post_name_to_applicant_work
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202103301553_add_post_name_to_applicant_work_table.sql
+  - changeSet:
+      validCheckSum: ANY
+      id: V202104050920_update_table_request_pred_limit
+      author: v.petrunya
+      preConditions:
+        - onFail: HALT
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: db/migrations/changes/V202104050919_update_table_request_pred_limit.sql

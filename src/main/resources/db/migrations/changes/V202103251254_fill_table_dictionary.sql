@@ -1,0 +1,1 @@
+insert into dictionary(id, code, name, created_date, updated_date, version) values('4b75466e-9eae-11eb-a8b3-0242ac130003', 'status', 'STATUS', '2021-03-25 12:06:18.749391', '2021-03-25 12:06:18.749391', 1);

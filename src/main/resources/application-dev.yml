@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: posadka-db
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        show_sql: false
+        temp:
+          use_jdbc_metadata_defaults: false
+  liquibase:
+    change-log: classpath:/db/migrations/db.changelog-master.yaml
+    database-change-log-table: schema_history
+    database-change-log-lock-table: schema_lock_history
+  data:
+    rest:
+      base-path: /api
+
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+  api-docs:
+    path: /api-docs
+
+management.endpoint.health.show-details: always
